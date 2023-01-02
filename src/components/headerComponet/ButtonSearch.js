@@ -1,5 +1,5 @@
 import React from "react";
-import iconSearch from "./src/img/triangleLogo.png";
+import iconSearch from "/src/img/logo.png";
 
 export default function SearchCity(){
     return(
