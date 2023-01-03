@@ -1,12 +1,60 @@
 *{
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 .App{
-  border: solid red 1px;
-  padding: 30px 40px 0px 40px;
+  border: solid red 1px;  
+  height: 10000px;
+  flex-direction: column;
 }
 /*--------------Header Style ---------------*/
 .logo{
   width: 110px;
+}
+header{
+  padding: 30px 40px 0px 40px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.searchSection{
+  width: 300px;
+  height: 58px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 45% 35% 20%;
+}
+.searchSection button{
+  background-color: #ffffff;
+  border-radius: none;
+  height: 55px;
+  font-size: 16px;
+  padding: 3px;
+}
+.guest-btn{
+  border-right: 1px solid silver;
+  border-left: 1px silver solid;
+  border-top: none;
+  border-bottom: none;
+}
+.city-btn{
+  border: none;
+}
+.city-btn img{
+  width: 30px;
+  height: 30px;
+}
+/* Search Menu Style -------*/
+.search{
+  text-align: left;
+  position: absolute;
+  top: 0px;
+  width: 99.9%;
+  height: 400px;
+  background-color: white;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 }

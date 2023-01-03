@@ -4,7 +4,7 @@ import SearchCity from "./headerComponet/SearchCity";
 import ButtonSearch from "./headerComponet/ButtonSearch"
 export default function Search(){
     return(
-        <section>
+        <section className="searchSection">
             <SearchCity/>
             <SearchGuest/>
             <ButtonSearch/>
