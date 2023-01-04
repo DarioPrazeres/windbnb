@@ -1,14 +1,23 @@
 import React from "react";
-export default function SearchSeaction(){
-    return(
+import searchIcon from "./imgComponent/searchWhite.png"
+export default function SearchSeaction() {
+    return (
         <section className="search">
             <div className="search-form">
-                <div>
-                    <h3>Location</h3>
-                    <input val/>
+                <div className="input-form">
+                    <label>Location</label>
+                    <input type='text' placeholder="Add Location"/>
                 </div>
-                <div></div>
-                <div></div>
+                <div className="input-form">
+                    <label>Guest</label>
+                    <input type='text' placeholder="Add Guest"/>
+                </div>
+                <div>
+                   <button className="submitSearch">
+                    <img src={searchIcon} alt="icon search white"/>
+                    <p>Search</p>
+                   </button>
+                </div>
             </div>
         </section>
     )

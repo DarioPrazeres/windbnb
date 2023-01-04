@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 .App{
-  border: solid red 1px;  
   height: 10000px;
   flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /*--------------Header Style ---------------*/
 .logo{
@@ -52,9 +52,58 @@ header{
 .search{
   text-align: left;
   position: absolute;
-  top: 0px;
+  top: 5px;
   width: 99.9%;
-  height: 400px;
+  height: 460px;
+  display: none;
+  padding: 50px 0px 0px 0px;
+  flex-direction: column;
   background-color: white;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+}
+.search-form{
+  align-self: center;
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  gap: 7px;
+  grid-template-rows: 55px;
+  border-radius: 16px;
+  box-shadow:0px 1px 6px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  padding: 5px;
+}
+.search-form div{
+  border-radius: 16px;
+  padding-top: 2px;
+}
+.submitSearch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eb5757;
+  border-radius: 16px;
+  border: none;
+  width: 127px;
+  height: 48px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 16px;
+}
+.submitSearch img{
+  width: 17px;
+  height: 17px;
+}
+/*--------Input Form Style -----------*/
+.input-form{
+  display: flex;
+  flex-direction: column;
+  padding: 4px 2px 2px 10px;
+  font-size: 18px;
+}
+.input-form input{
+  outline: none;
+  border: none;
+  font-size: 14px;
+  margin-top: 5px;
+  width: 200px;
 }
