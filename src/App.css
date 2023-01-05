@@ -1,4 +1,4 @@
-*{
+/**{
   margin: 0px;
   padding: 0px;
 }
@@ -7,11 +7,6 @@
   display: flex;
   font-weight: 100;
 }
-
-/*
-  Estilo Para o Barra lateral do App
-
-*/
 .sideBar{
   width: 30%;
   height: 1000px;
@@ -29,7 +24,7 @@
   justify-content: space-between;
 }
 .sideBar-header button{
-  font-size: 16px;
+  font-size: 14px;
   margin: 5px;
   padding: 5px;
   height: 45px;
@@ -91,10 +86,9 @@
 .search-place input:focus{
   border: none;
 }
-/*
   Estilo Para o Corpo do App
 
-*/
+
 .bodyApp{
   width: 70%;
   height: 1000px;
@@ -102,11 +96,12 @@
   color: white;
 }
 
-/*
+
   Estilo Para os Componentes gerais
 
-*/
+
 
 .visible{
   display: none;
 }
+*/

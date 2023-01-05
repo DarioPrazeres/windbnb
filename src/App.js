@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './components/Header';
 import SearchSeaction from './components/SearchSection';
 import Places from './components/placeComponent/Places';
+import Footer from './Footer';
 
 class App extends Component {
   render() {
@@ -11,6 +11,7 @@ class App extends Component {
           <Header/>
           <SearchSeaction/>
           <Places/>
+          <Footer/>
         </div>
     );
   }

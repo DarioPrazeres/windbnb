@@ -1,5 +1,6 @@
 import React from "react";
 import file from "../stays.json";
+import starIcon from "../imgComponent/star.png"
 var dataVar = file;
 export default function Places() {
     return (
@@ -8,30 +9,30 @@ export default function Places() {
                 <h1>Stays in Finland</h1>
                 <p>{dataVar.length - 2}+ stays</p>
             </div>
-            <div className="hosts">
+            <section className="hosts">
                 {dataVar.map((data) =>
-                    <BannerImg key={data.id} photo={data.photo} />
+                    <Banner key={data.id} datta={data}/>
                 )}
-            </div>
+            </section>
         </section>
     )
 }
 function BannerImg(props) {
     return <img src={props.photo} alt="banner" className="bannerHost" />
 }
-function Banner() {
+function Banner(props) {
     return (
-        <div>
-            <BannerImg  />
-            <div>
-                <span>Super Host</span>
-                <p>Type Apartement</p>
+        <div className="host-section">
+            <BannerImg  photo={props.datta.photo}  />
+            <div className="hostDetail">
+                <span className="super">Super Host</span>
+                <p className="type">{props.datta.type}</p>
                 <div className="rating">
-                    <img src="" alt="star rating"/>
-                    <p>rating</p>
-                </div>
-            </div>
+                    <img src={starIcon} alt="star rating"/>
+                    <p>{props.datta.rating}</p>
+                </div>               
+            </div> 
+            <h3>{props.datta.title}</h3>
         </div>
     )
 }
-//key={data.id} photo={data.photo}
