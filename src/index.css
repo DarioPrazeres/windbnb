@@ -114,7 +114,6 @@ header{
 }
 .detail-city,
 .detail-guest{
-  border: solid 1px black;
   padding: 10px;
 }
 /*--------Input Form Style -----------*/
@@ -191,6 +190,40 @@ header{
   border: 1px solid #4f4f4f;
   padding: 5px;
   font-size: 14px;
+}
+/*----------Tips City Form --------*/
+.tipsCity{
+  display: flex;
+  margin: 10px 0px 20px 0px;
+}
+.tipsCity img{
+  margin-right: 7px;
+  width: 20px;
+  height: 20px;
+}
+/*-------------Control Of Add Guest ------------*/
+.control-Add{
+  display: flex;
+}
+.controls{
+  width: 23px;
+  height: 23px;
+  border: solid 1px #828282;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 20px;
+  background: none;
+  margin: 10px 10px 10px 0px;
+}
+.addGuest{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.cityname{
+  margin: 10px 0px 10px 0px;
+}
+.control-add{
+  margin-left: 10px;
 }
 /*-----------Footer --------------*/
 footer {
