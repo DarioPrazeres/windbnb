@@ -13,7 +13,7 @@ class App extends Component {
           <Places/>
           <Footer/>
         </div>
-    );
+    ); 
   }
 }
 
