@@ -23,11 +23,11 @@ export default function SearchSeaction() {
     return (
         <section className="search">
             <div className="search-form">
-                <div className="input-form">
+                <div className="input-form cityForm" onClick={displayItem}>
                     <label>Location</label>
                     <input type='text' placeholder="Add Location" value={searchTerm} onChange={handleChange} />
                 </div>
-                <div className="input-form">
+                <div className="input-form" >
                     <label>Guest</label>
                     <input type='number' placeholder="Add Guest"/>
                 </div>
@@ -39,7 +39,7 @@ export default function SearchSeaction() {
                 </div>
             </div>
             <div className="search-detail">
-                <div className="detail-city">
+                <div className="detail-city invisibility">
                     {
                         searchResults.map(item => (
                             <CitySearch cityName={item} />
@@ -77,4 +77,11 @@ function CitySearch(props){
             <p>{props.cityName}, Finland</p>
         </div>
     )
+}
+function displayItem(){
+    const detail = document.querySelector('div.detail-city');
+    const cityForm = document.querySelector('div.cityForm');
+    cityForm.classList.add('borderFocus')
+    detail.classList.remove('invisibility');
+    detail.classList.add('visibility');
 }

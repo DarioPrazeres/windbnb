@@ -111,10 +111,18 @@ header{
   height: 300px;
   display: grid;
   grid-template-columns: 40% 40%;
+  position: relative;
 }
 .detail-city,
 .detail-guest{
   padding: 10px;
+}
+.detail-guest{
+  position: absolute;
+  left: 40%;
+  width: 450px;
+  height: 300px;
+  border: solid 1px rebeccapurple;
 }
 /*--------Input Form Style -----------*/
 .input-form{
@@ -238,4 +246,13 @@ footer p {
 
 footer a {
   color: rgb(103, 102, 102);
+}
+.visibility{
+  display: block;
+}
+.invisibility{
+  display: none;
+}
+.borderFocus{
+  border: solid 1px #828282;
 }
