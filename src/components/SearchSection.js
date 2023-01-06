@@ -2,6 +2,8 @@ import React from "react";
 import searchIcon from "./imgComponent/searchWhite.png";
 //import dataFile from "./stays.json";
 import gpsIcon from "./imgComponent/gpsIcon.png";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem, deleteItem } from "../action/cartAction";
 
 const cities =[
     "Helsinki",
@@ -16,6 +18,10 @@ export default function SearchSeaction() {
     const handleChange = e =>{
         setSearchTerm(e.target.value);
     };
+    //Redux Aqui
+    const state = useSelector((state) => state);
+    const dispatch = useDispatch();
+
     React.useEffect(()=>{
         const results = cities.filter(city => city.toLocaleLowerCase().includes(searchTerm));
         setSearchResults(results);
@@ -51,9 +57,16 @@ export default function SearchSeaction() {
                         <h3>Adults</h3>
                         <p className="rating">Ages 13 or above</p>
                         <div className="control-Add">
-                            <button className="controls">-</button>
-                            <p className="cityname">0</p>
-                            <button className="controls control-add">+</button>
+                            <button className="controls"
+                            onClick={() => {
+                                dispatch(addItem());
+                              }}>-</button>
+                            <p className="cityname">{state.numOfItems}</p>
+                            <button className="controls control-add"
+                            disabled={state.numOfItems > 0 ? false : true}
+                            onClick={() => {
+                              dispatch(deleteItem());
+                            }}>+</button>
                         </div>
                     </div>
                     <div className="addGuest-child">
