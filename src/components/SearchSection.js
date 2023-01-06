@@ -2,8 +2,10 @@ import React from "react";
 import searchIcon from "./imgComponent/searchWhite.png";
 //import dataFile from "./stays.json";
 import gpsIcon from "./imgComponent/gpsIcon.png";
-import { useSelector, useDispatch } from "react-redux";
-import { addItem, deleteItem } from "../action/cartAction";
+//Import Control
+import ControlChild from "./controlGuest/ControlChild";
+import ControlAdult from "./controlGuest/ControlAdult";
+import { useSelector } from "react-redux";
 
 const cities =[
     "Helsinki",
@@ -13,15 +15,12 @@ const cities =[
 ]
 
 export default function SearchSeaction() {
+    const countT = useSelector((state) => state.counterT.value);
     const [searchTerm, setSearchTerm] = React.useState('');
     const [searchResults, setSearchResults] = React.useState([]);
     const handleChange = e =>{
         setSearchTerm(e.target.value);
     };
-    //Redux Aqui
-    const state = useSelector((state) => state);
-    const dispatch = useDispatch();
-
     React.useEffect(()=>{
         const results = cities.filter(city => city.toLocaleLowerCase().includes(searchTerm));
         setSearchResults(results);
@@ -35,7 +34,7 @@ export default function SearchSeaction() {
                 </div>
                 <div className="input-form" >
                     <label>Guest</label>
-                    <input type='number' placeholder="Add Guest"/>
+                    <p>{countT}Guests</p>
                 </div>
                 <div>
                    <button className="submitSearch">
@@ -53,32 +52,10 @@ export default function SearchSeaction() {
                     }
                 </div>
                 <div className="detail-guest">
-                    <div className="addGuest">
-                        <h3>Adults</h3>
-                        <p className="rating">Ages 13 or above</p>
-                        <div className="control-Add">
-                            <button className="controls"
-                            onClick={() => {
-                                dispatch(addItem());
-                              }}>-</button>
-                            <p className="cityname">{state.numOfItems}</p>
-                            <button className="controls control-add"
-                            disabled={state.numOfItems > 0 ? false : true}
-                            onClick={() => {
-                              dispatch(deleteItem());
-                            }}>+</button>
-                        </div>
-                    </div>
-                    <div className="addGuest-child">
-                        <h3>Children</h3>
-                        <p className="rating">Ages 2-13</p>
-                        <div className="control-Add">
-                            <button className="controls">-</button>
-                            <p className="cityname">0</p>
-                            <button className="controls control-add">+</button>
-                        </div>
-                    </div>
+                    <ControlAdult/>
+                    <ControlChild/>
                 </div>
+                
             </div>
         </section>
     )
