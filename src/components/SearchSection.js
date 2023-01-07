@@ -5,7 +5,7 @@ import gpsIcon from "./imgComponent/gpsIcon.png";
 //Import Control
 import ControlChild from "./controlGuest/ControlChild";
 import ControlAdult from "./controlGuest/ControlAdult";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const cities =[
     "Helsinki",
@@ -34,7 +34,7 @@ export default function SearchSeaction() {
                 </div>
                 <div className="input-form" >
                     <label>Guest</label>
-                    <p>{countT}Guests</p>
+                    <p>{countT}guests</p>
                 </div>
                 <div>
                    <button className="submitSearch">
