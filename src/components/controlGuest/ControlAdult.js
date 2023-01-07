@@ -14,7 +14,7 @@ export default function ControlAdult() {
                 onClick={()=>dispatch(decrementAdult())}>-</button>
                 <p className="cityname">{count}</p>
                 <button className="controls control-add" 
-                    onClick={()=>dispatch(incrementByAmount(count, 3))}
+                    onClick={()=>dispatch(incrementAdult())}
                 >+</button>
             </div>
         </div>

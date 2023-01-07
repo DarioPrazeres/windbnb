@@ -5,7 +5,7 @@ export const counterAdultSlice = createSlice({
       value: 0,
     },
     reducers: {
-      incrementAdult: (state) => {
+      incrementAdult: (state, action) => {
         // Redux Toolkit allows us to write "mutating" logic in reducers. It
         // doesn't actually mutate the state because it uses the Immer library,
         // which detects changes to a "draft state" and produces a brand new
@@ -20,7 +20,7 @@ export const counterAdultSlice = createSlice({
         }        
       },
       incrementByAmount: (state, action) => {
-        state.value += action.payload
+        state.value = action.payload
       },
       zerarByAmount: (state, action) => {
         state.value = 0
