@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementAdult, decrementAdult, incrementByAmount } from "../../features/counter/counterAdult";
-import { updateTotal } from "../../features/counter/totalGuest";
+import { updateTotal, decrementTotal } from "../../features/counter/totalGuest";
 export default function ControlAdult() {
     const count = useSelector((state) => state.counterAd.value);
     const countCh = useSelector((state) => state.counter.value);
+    const countT = useSelector((state) => state.counterT.value);
     const dispatch = useDispatch();
     return (
         <div className="addGuest">
@@ -14,7 +15,7 @@ export default function ControlAdult() {
                 <button className="controls"
                 onClick={()=>{
                     dispatch(decrementAdult())
-                    dispatch(updateTotal(count+countCh));   
+                    dispatch(decrementTotal());  
                 }
                 }>-</button>
                 <p className="cityname">{count}</p>
@@ -22,7 +23,7 @@ export default function ControlAdult() {
                     onClick={
                         ()=>{
                             dispatch(incrementAdult());
-                            dispatch(updateTotal(count+countCh));
+                            dispatch(updateTotal());
                         }
                             
                     }

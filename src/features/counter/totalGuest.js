@@ -8,7 +8,7 @@ export const counterTotalSlice = createSlice({
     },
     reducers: {
       updateTotal: (state, action) => {
-        state.value = action.payload
+        state.value +=1
       },
       decrementTotal: (state) => {
         if(state.value>0){

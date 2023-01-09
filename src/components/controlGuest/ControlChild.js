@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../features/counter/counter";
-import { updateTotal } from "../../features/counter/totalGuest";
+import { updateTotal, decrementTotal } from "../../features/counter/totalGuest";
 
 export default function ControlChild(prop) {
     const countT = useSelector((state) => state.counterT.value);
@@ -15,7 +15,7 @@ export default function ControlChild(prop) {
         //And any time any dependency value changes
         setC(count+counterAd)
         console.log(c)
-      }, []);
+      }, [c]);
     return (
         <div className="addGuest-child">
             <h3>Children</h3>
@@ -24,14 +24,14 @@ export default function ControlChild(prop) {
                 <button className="controls"
                     onClick={() => {
                         dispatch(decrement())
-                        dispatch(updateTotal(counterAd + count));
+                        dispatch(decrementTotal());
                     }}
                 >-</button>
                 <p className="cityname">{count}</p>
                 <button className="controls control-add"
                     onClick={() => {
                         dispatch(increment());
-                        dispatch(updateTotal(count + counterAd));
+                        dispatch(updateTotal());
                     }}
                 >+</button>
             </div>
