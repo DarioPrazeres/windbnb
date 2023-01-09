@@ -4,7 +4,6 @@ import { incrementAdult, decrementAdult, incrementByAmount } from "../../feature
 import { updateTotal } from "../../features/counter/totalGuest";
 export default function ControlAdult() {
     const count = useSelector((state) => state.counterAd.value);
-    const countT = useSelector((state) => state.counterT.value);
     const countCh = useSelector((state) => state.counter.value);
     const dispatch = useDispatch();
     return (

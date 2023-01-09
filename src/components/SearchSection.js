@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import searchIcon from "./imgComponent/searchWhite.png";
 //import dataFile from "./stays.json";
 import gpsIcon from "./imgComponent/gpsIcon.png";
@@ -24,7 +25,7 @@ export default function SearchSeaction() {
     React.useEffect(()=>{
         const results = cities.filter(city => city.toLocaleLowerCase().includes(searchTerm));
         setSearchResults(results);
-    }, [searchTerm])
+    }, [searchTerm]);
     return (
         <section className="search">
             <div className="search-form">
