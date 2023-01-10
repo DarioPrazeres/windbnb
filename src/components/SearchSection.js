@@ -6,6 +6,7 @@ import gpsIcon from "./imgComponent/gpsIcon.png";
 import ControlChild from "./controlGuest/ControlChild";
 import ControlAdult from "./controlGuest/ControlAdult";
 import { useSelector } from "react-redux";
+import openSearchSection from "./headerComponet/openSearch";
 
 const cities = [
     "Helsinki",
@@ -27,11 +28,11 @@ export default function SearchSeaction() {
     return (
         <section className="search">
             <div className="search-form">
-                <div className="input-form cityForm" onClick={displayItem}>
+                <div className="input-form cityForm" onClick={()=>openSearchSection('city')}>
                     <label>Location</label>
                     <input type='text' placeholder="Add Location" value={searchTerm} onChange={handleChange} />
                 </div>
-                <div className="input-form guest-form" >
+                <div className="input-form guest-form" onClick={()=>openSearchSection('guest')} >
                     <label>Guest</label>
                     <p>{countT} guests</p>
                 </div>
@@ -66,13 +67,6 @@ function CitySearch(props) {
             <p>{props.cityName}, Finland</p>
         </div>
     )
-}
-function displayItem() {
-    const detail = document.querySelector('div.detail-city');
-    const cityForm = document.querySelector('div.cityForm');
-    //cityForm.classList.add('borderFocus')
-    //detail.classList.remove('invisibility');
-    //detail.classList.add('visibility');
 }
 function hideSearchSection(){
     const searchSeaction = document.querySelector
