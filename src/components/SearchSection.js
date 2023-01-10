@@ -14,7 +14,8 @@ const cities = [
     "Helsinki",
     "Vaasa",
     "Turku",
-    "Oulu"
+    "Oulu",
+    "All Cities"
 ]
 
 export default function SearchSeaction() {
@@ -96,7 +97,7 @@ function hideSearchSection() {
 export function searchParameter(city, guests){
     var datta = dataFile;
     const result = [];
-    if (city === 'All') {
+    if ((city === 'All') || (city==='All Cities')) {
         return datta;
     } else {
         for (var c = 0; c < datta.length; c++) {

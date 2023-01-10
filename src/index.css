@@ -145,6 +145,7 @@ header{
   flex-direction: column;
   padding: 30px 40px 0px 40px;
   width: 100%;
+  min-height: 1000px;
   display: flex;
   align-items: center;
 }
