@@ -13,7 +13,9 @@ export default function ControlAdult() {
                 <button className="controls"
                 onClick={()=>{
                     dispatch(decrementAdult())
-                    dispatch(decrementTotal());  
+                    if(count>0){
+                       dispatch(decrementTotal());  
+                    }                     
                 }
                 }>-</button>
                 <p className="cityname">{count}</p>

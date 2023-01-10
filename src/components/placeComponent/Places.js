@@ -1,10 +1,24 @@
 import React from "react";
 import file from "../stays.json";
-import starIcon from "../imgComponent/star.png"
+import starIcon from "../imgComponent/star.png";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { searchParameter } from "../SearchSection";
 var dataVar = file;
 
 export default function Places() {
-    var hostComponent = searchExemple('All', dataVar);
+    const city = useSelector((state)=>state.city.value)
+    const search = useSelector((state)=> state.searchCity.value)
+    const qtdRoom = useSelector((state) => state.counterT.value);
+    const [qtd, setQtd] = useState(0);
+    const [cityName, setCityName] = useState('All');
+    const [hostComponent, setHost] = useState(searchParameter(cityName, qtd));
+    
+    useEffect(()=>{
+        setCityName(city);
+        setQtd(qtdRoom)
+        setHost(searchParameter(city, qtd));
+    }, [city, qtdRoom])
     return (
         <section className="placeSection">
             <div className="title-place">
@@ -45,14 +59,15 @@ function styleSuperGuest(value) {
         return 'none'
     }
 }
-function searchExemple(value, datta) {
+function searchHouse(cty, guests) {
+    var datta = dataVar;
     const result = [];
-    if (value === 'All') {
+    if (cty === 'All') {
         return datta;
     } else {
         for (var c = 0; c < datta.length; c++) {
-            if (datta[c].city === value) {
-                result.push(datta[c])
+            if ((datta[c].city === cty) && (datta[c].maxGuests>=guests)) {
+                result.push(datta[c]);
             }
         }
         return result;

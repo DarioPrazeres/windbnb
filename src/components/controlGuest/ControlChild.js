@@ -13,9 +13,8 @@ export default function ControlChild(prop) {
     useEffect(() => {
         //Runs on the first render
         //And any time any dependency value changes
-        setC(count+counterAd)
-        console.log(c)
-      }, [c]);
+        setC(count + counterAd)
+    }, [c]);
     return (
         <div className="addGuest-child">
             <h3>Children</h3>
@@ -23,8 +22,10 @@ export default function ControlChild(prop) {
             <div className="control-Add">
                 <button className="controls"
                     onClick={() => {
-                        dispatch(decrement())
-                        dispatch(decrementTotal());
+                        dispatch(decrement());
+                        if (count > 0) {
+                            dispatch(decrementTotal());
+                        }
                     }}
                 >-</button>
                 <p className="cityname">{count}</p>

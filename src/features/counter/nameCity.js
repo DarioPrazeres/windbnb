@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 export const cityNameslice = createSlice({
-    name:'nameCity',
-    initialState:{
-        value:'Helsinki'
+    name: 'nameCity',
+    initialState: {
+        value: 'All'
     },
-    reducers:{
-        newCity: (state)=>{
-            state.value = state.payload;
+    reducers: {
+        newCity: (state, action) => {
+            state.value = action.payload;
         },
     },
 })
-export const {newCity} = cityNameslice.actions;
+export const { newCity } = cityNameslice.actions;
 
-export default cityNameslice.reducer;
+export default cityNameslice.reducer
