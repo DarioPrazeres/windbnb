@@ -1,7 +1,7 @@
 import React from "react";
-
+import openSearchSection from "./openSearch";
 export default function SearchGuest(){
     return(
-        <button className="guest-btn">Add guest</button>
+        <button className="guest-btn" onClick={()=>openSearchSection('guest')}>Add guest</button>
     )
 }

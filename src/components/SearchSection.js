@@ -1,28 +1,26 @@
 import React from "react";
-import { useEffect } from "react";
 import searchIcon from "./imgComponent/searchWhite.png";
 //import dataFile from "./stays.json";
 import gpsIcon from "./imgComponent/gpsIcon.png";
 //Import Control
 import ControlChild from "./controlGuest/ControlChild";
 import ControlAdult from "./controlGuest/ControlAdult";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-const cities =[
+const cities = [
     "Helsinki",
     "Vaasa",
     "Turku",
     "Oulu"
 ]
-
 export default function SearchSeaction() {
     const countT = useSelector((state) => state.counterT.value);
     const [searchTerm, setSearchTerm] = React.useState('');
     const [searchResults, setSearchResults] = React.useState([]);
-    const handleChange = e =>{
+    const handleChange = e => {
         setSearchTerm(e.target.value);
     };
-    React.useEffect(()=>{
+    React.useEffect(() => {
         const results = cities.filter(city => city.toLocaleLowerCase().includes(searchTerm));
         setSearchResults(results);
     }, [searchTerm]);
@@ -33,19 +31,19 @@ export default function SearchSeaction() {
                     <label>Location</label>
                     <input type='text' placeholder="Add Location" value={searchTerm} onChange={handleChange} />
                 </div>
-                <div className="input-form" >
+                <div className="input-form guest-form" >
                     <label>Guest</label>
-                    <p>{countT}guests</p>
+                    <p>{countT} guests</p>
                 </div>
                 <div>
-                   <button className="submitSearch">
-                    <img src={searchIcon} alt="icon search white"/>
-                    <p>Search</p>
-                   </button>
+                    <button className="submitSearch" onClick={hideSearchSection}>
+                        <img src={searchIcon} alt="icon search white" />
+                        <p>Search</p>
+                    </button>
                 </div>
             </div>
             <div className="search-detail">
-                <div className="detail-city invisibility">
+                <div className="detail-city">
                     {
                         searchResults.map(item => (
                             <CitySearch cityName={item} />
@@ -53,15 +51,15 @@ export default function SearchSeaction() {
                     }
                 </div>
                 <div className="detail-guest">
-                    <ControlAdult/>
-                    <ControlChild/>
+                    <ControlAdult />
+                    <ControlChild />
                 </div>
-                
+
             </div>
         </section>
     )
 }
-function CitySearch(props){
+function CitySearch(props) {
     return (
         <div className="tipsCity">
             <img src={gpsIcon} alt="item of location" />
@@ -69,10 +67,15 @@ function CitySearch(props){
         </div>
     )
 }
-function displayItem(){
+function displayItem() {
     const detail = document.querySelector('div.detail-city');
     const cityForm = document.querySelector('div.cityForm');
-    cityForm.classList.add('borderFocus')
-    detail.classList.remove('invisibility');
-    detail.classList.add('visibility');
+    //cityForm.classList.add('borderFocus')
+    //detail.classList.remove('invisibility');
+    //detail.classList.add('visibility');
+}
+function hideSearchSection(){
+    const searchSeaction = document.querySelector
+    ('section.search');
+    searchSeaction.style.display = 'none';
 }

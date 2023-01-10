@@ -66,7 +66,7 @@ header{
   top: 5px;
   width: 99.9%;
   height: 460px;
-  display: flex;
+  display: none;
   padding: 50px 0px 0px 0px;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
@@ -116,13 +116,14 @@ header{
 .detail-city,
 .detail-guest{
   padding: 10px;
+  display: none;
 }
 .detail-guest{
   position: absolute;
   left: 40%;
   width: 450px;
   height: 300px;
-  border: solid 1px rebeccapurple;
+  margin-left: 8px;
 }
 /*--------Input Form Style -----------*/
 .input-form{

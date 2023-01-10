@@ -1,11 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementAdult, decrementAdult, incrementByAmount } from "../../features/counter/counterAdult";
+import { incrementAdult, decrementAdult } from "../../features/counter/counterAdult";
 import { updateTotal, decrementTotal } from "../../features/counter/totalGuest";
 export default function ControlAdult() {
     const count = useSelector((state) => state.counterAd.value);
-    const countCh = useSelector((state) => state.counter.value);
-    const countT = useSelector((state) => state.counterT.value);
     const dispatch = useDispatch();
     return (
         <div className="addGuest">
