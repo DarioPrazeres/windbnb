@@ -15,6 +15,7 @@ const cities = [
     "Oulu"
 ]
 export default function SearchSeaction() {
+    const nameCity = useSelector((state)=>state.city.value)
     const countT = useSelector((state) => state.counterT.value);
     const [searchTerm, setSearchTerm] = React.useState('');
     const [searchResults, setSearchResults] = React.useState([]);
@@ -30,7 +31,7 @@ export default function SearchSeaction() {
             <div className="search-form">
                 <div className="input-form cityForm" onClick={()=>openSearchSection('city')}>
                     <label>Location</label>
-                    <input type='text' placeholder="Add Location" value={searchTerm} onChange={handleChange} />
+                    <input type='text' placeholder="Add Location" value={searchTerm||nameCity} onChange={handleChange} />
                 </div>
                 <div className="input-form guest-form" onClick={()=>openSearchSection('guest')} >
                     <label>Guest</label>

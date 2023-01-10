@@ -22,8 +22,7 @@ export default function ControlAdult() {
                         ()=>{
                             dispatch(incrementAdult());
                             dispatch(updateTotal());
-                        }
-                            
+                        }                            
                     }
                 >+</button>
             </div>
