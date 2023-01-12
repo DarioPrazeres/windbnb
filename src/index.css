@@ -259,6 +259,27 @@ footer a {
 .borderFocus{
   border: solid 1px #828282;
 }
+@media only screen and (max-width: 1500px){
+  .hosts{
+    width: 100%;
+    grid-template-columns: repeat(4, 25%);
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1000px){
+  .hosts{
+    width: 100%;
+    grid-template-columns: repeat(3, 34%);
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 700px){
+  .hosts{
+    width: 100%;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+  }
+}
 @media only screen and (max-width: 500px){
   h1{
     font-size: 20px;
