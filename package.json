@@ -1,26 +1,38 @@
 {
-    "homepage": "http://darioprazeres.github.io/windbnb",
-    "name": "windbnb",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@reduxjs/toolkit": "^1.9.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-redux": "^8.0.5",
-        "react-scripts": "^5.0.1",
-        "redux": "^4.2.0",
-        "uglify-js-es6": "^2.8.9"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
-    },
-    "devDependencies": {
-        "gh-pages": "^4.0.0"
-    }
+  "homepage": "http://darioprazeres.github.io/windbnb",
+  "name": "windbnb",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0",
+    "uglify-js-es6": "^2.8.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
