@@ -238,6 +238,7 @@ header{
 /*-----------Footer --------------*/
 footer {
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 footer p {
