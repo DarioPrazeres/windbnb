@@ -258,3 +258,52 @@ footer a {
 .borderFocus{
   border: solid 1px #828282;
 }
+@media only screen and (max-width: 500px){
+  h1{
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: 600;
+  }
+  header{
+    flex-direction: column; 
+    align-items: none; 
+    text-align: left;
+    height: auto;
+    position: relative;
+  }
+  .searchSection{
+    margin-top: 80px;
+  }
+  .logo{
+    position: absolute;
+    left: 10px;
+  }
+  .placeSection, header{
+    padding: 30px 20px 0px 20px;
+  }
+  .hosts{
+    width: 100%;
+    grid-template-columns: repeat(1, 100%);
+    align-items: center;
+  }
+  .search-form{
+    width: 97%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+  }
+  .search-form div{ 
+  }
+  .submitSearch{
+    position: absolute;
+    top: 540px;
+    left: 100px;
+  }
+  .search{
+    height: 600px;
+  }
+  .detail-guest{
+    left: 1px;
+    margin-left: 8px;
+    width: auto;
+  }
+}
